@@ -1,0 +1,4 @@
+
+public class ObjectRepository {
+	public static String searchIcon= "";
+}

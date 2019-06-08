@@ -1,0 +1,13 @@
+package com.WebAutomation;
+
+public class ObjectRepository {
+	//Xpath
+	public static String searchIcon= "//span[@class='header-search-open-trigger-label ng-binding']";
+	
+	//Css
+	
+	//id
+	public static String btnCloseCookies="button-text";
+	public static String txtSearchBox="searchTerm";
+	//class
+}
