@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+D:\MercedesBenzAutomation\MercedesBenzAutomation\.metadata\.plugins\org.eclipse.jdt.core
+1968296439.index
