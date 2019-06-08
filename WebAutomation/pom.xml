@@ -6,7 +6,7 @@
   <name>DemoProject</name>
   <description>For Testing</description>
   <properties>
-  	<selenium.version>2.53.1</selenium.version>	
+  	<selenium.version>3.4.0</selenium.version>	
   </properties>
   <dependencies>
   	<dependency>
