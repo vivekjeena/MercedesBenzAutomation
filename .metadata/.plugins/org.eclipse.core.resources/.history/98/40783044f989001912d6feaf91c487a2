@@ -5,8 +5,4 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>DemoProject</name>
   <description>For Testing</description>
-  <properties>
-  	<selenium.version>2.53.1</selenium.version>	
-  	<testng.version>6.9.20</testng.version>
-  </properties>
 </project>
