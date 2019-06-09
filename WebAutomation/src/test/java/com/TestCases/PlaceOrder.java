@@ -35,7 +35,7 @@ public class PlaceOrder {
 
 	@AfterClass
 	public void afterClass() {
-		//driver.quit();
+		driver.quit();
 	}
 
 	@Test
