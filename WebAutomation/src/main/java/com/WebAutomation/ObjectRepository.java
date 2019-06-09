@@ -9,11 +9,12 @@ public class ObjectRepository {
 	// id
 	public static String btnCloseCookies = "button-text";
 	public static String txtSearchBox = "searchTerm";
+	public static String newsLetterEmail = "footerNewsletterEmail";
 
 	// css
 	public static String lnkLogin = ".ng-scope:nth-child(2) > .hidden-xs";
 
-	static class Idp {
+	public static class Idp {
 		// Xpath
 		public static String itemNumberOnIDP = "//span[@data-testid='pdp-shortdescription-articlenumber']";
 		public static String itemPriceOnIDP = "//span[@data-testid='pdp-buy-box-add-to-basket-price']";
@@ -26,7 +27,7 @@ public class ObjectRepository {
 		// class
 	}
 
-	static class AddToCartModal {
+	public static class AddToCartModal {
 		// Xpath
 		public static String itemNumber = "(//p[@data-testid='co-orderline-product-article-number'])[2]";
 		public static String itemPrice = "(//span[@data-testid='co-orderline-baseprice-value'])[2]";
@@ -41,7 +42,7 @@ public class ObjectRepository {
 
 	}
 
-	static class Cart {
+	public static class Cart {
 		// Xpath
 		public static String itemNumber = "//p[@data-testid='co-orderline-product-article-number']";
 		public static String itemPrice = "//span[@data-testid='co-orderline-baseprice-value']";
@@ -76,10 +77,11 @@ public class ObjectRepository {
 
 	}
 
-	static class Summary {
+	public static class Summary {
 		// xpath
 		public static String paymentMethod = "//div[@data-testid='dcp-co-order-data-body-group-content-paymentmethod']";
 		public static String itemNumber = Cart.itemNumber;
 		public static String itemPrice = "//span[@data-testid='co-orderline-baseprice-value']";
+		public static String itemQty = "(//span[@data-testid='co-orderline-quantity-value'])[2]";
 	}
 }
