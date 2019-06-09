@@ -19,11 +19,16 @@ import org.testng.annotations.Test;
 
 import com.WebAutomation.ObjectRepository;
 import com.WebAutomation.TestData;
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 
 public class PlaceOrder {
 
 	private WebDriver driver;
 	private Actions action;
+	private static ExtentTest test;
+	private static ExtentReports report;
 
 	@BeforeClass
 	public void beforeClass() {
@@ -31,11 +36,16 @@ public class PlaceOrder {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		action = new Actions(driver);
+		report = new ExtentReports("ExtentReportResults.html");
+		test = report.startTest("ExtentDemo");
 	}
 
 	@AfterClass
 	public void afterClass() {
 		driver.quit();
+		test.log(LogStatus.PASS, "Closed Browser");
+		report.endTest(test);
+		report.flush();
 	}
 
 	@Test
@@ -43,6 +53,8 @@ public class PlaceOrder {
 
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		openUrl("https://shop.mercedes-benz.com/en-gb/collection/");
+		test.log(LogStatus.PASS, "Launched URL");
+
 		String tempItemNumber, tempItemPrice, tempItemQty = "1";
 		Boolean validationItemNumber, vaidationItemPrice;
 
@@ -50,7 +62,7 @@ public class PlaceOrder {
 		clsoeCookiesModal();
 		// User can see header Log in |
 		Assert.assertEquals(getText("cssSelector", ObjectRepository.lnkLogin), "Log in");
-
+		test.log(LogStatus.PASS, "Text ValidationL");
 		// Click on first recommendation
 		waitForElement(By.id(ObjectRepository.newsLetterEmail));
 		clickOnElement("xpath", ObjectRepository.firstSearchResult);
@@ -140,6 +152,7 @@ public class PlaceOrder {
 	}
 
 	public void clickOnElement(String selectBy, String objectReference) {
+		syncBrowser();
 		waitForElement(getSelector(selectBy, objectReference));
 		action.moveToElement(driver.findElement(getSelector(selectBy, objectReference))).click().perform();
 	}
